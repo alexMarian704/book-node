@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../layouts/head") %> 
+<body>
+    <%- include("../layouts/nav") %>
+    <form action="/book/add" method="post" enctype="multipart/form-data">
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="title" class="title" autocomplete="off">
+        <br>
+        <label for="author">Author</label>
+        <br>
+        <input type="text" name="author" class="author" autocomplete="off">
+        <br>
+        <label for="description">Description</label>
+        <br>
+        <input type="text" name="description" class="description" autocomplete="off">
+        <br>
+        <label for="poster">Poster</label>
+        <br>
+        <input type="file" name="poster" id="imageInput" autocomplete="off">
+        <input type="button" value="Browse..." onclick="document.getElementById('imageInput').click();"  id="fileBut"/>
+        <br>
+        <label for="pages">Pages</label>
+        <br>
+        <textarea name="pages" id="bookPages" cols="30" rows="10"></textarea>
+        <br>
+        <button id="submit">Post</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
+    <!-- <script src="/main.js"></script> -->
+</body>
+</html>

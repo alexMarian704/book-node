@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../layouts/head") %> 
+<body>
+    <%- include("../layouts/nav") %>
+    <div class="container">
+        <% book.forEach(books => { %>
+            <a href="/book/<%= books._id %> "> 
+            <div class="book">
+                <h1 id="title"><%= books.title %></h1>
+                <h2 id="author"><%= books.author %></h2>
+                <img src="<%= books.poster %> " id="poster">
+            </a>
+                <h4 id="description"><%= books.description %></h4>
+            </div> 
+        <% }); %> 
+    </div> 
+    <div id="slide">
+        <h1>
+            All books
+        </h1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
+</body>
+</html>

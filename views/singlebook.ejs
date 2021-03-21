@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../layouts/head") %>
+
+    <body>
+        <%- include("../layouts/nav") %>
+            <main id="singleMain">
+                <div id="singleContainer">
+                    <h1 id="sigleTitle">
+                        <%= book.title %>
+                    </h1>
+                    <h2 id="authorSingle">
+                        <%= book.author %>
+                    </h2>
+                    <p id="pages">
+                        <%= book.pages %>
+                    </p>
+                </div>
+
+                <a href="" class="delete" id="delete" data-book="<%= book._id %>">Delete</a>
+            </main>
+            <div class="comment-container">
+                <h1>Comments</h1>
+                <hr>
+                <br>
+                <% comment.forEach(com=>{ %>
+                    <% if(`${book._id}`===`${com.parenBook}`){ %>
+                        <div id="singleComContainer">
+                            <p id="comtext" data-comment="<%= com.text %> ">
+                                <%= com.text %>
+                            </p>
+                            <!-- <a href="" id="delete-com" data-url="<%= book._id %> "><i class="fas fa-trash"></i></a> -->
+
+                        </div>
+                        <% } %>
+                            <% }) %>
+            </div>
+
+            <form method="POST" action="/book/<%= id %>" id="formCom">
+                <label for="text" id="labelCom">Add comment</label>
+                <hr>
+                <input type="text" name="text" autocomplete="off" id="inputCom">
+                <br>
+                <button id="submit" data-com="<%= book._id %> ">Post</button>
+            </form>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+                integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
+                crossorigin="anonymous"></script>
+            <script src="/delete.js"></script>
+
+            <script>
+
+            </script>
+    </body>
+
+</html>
