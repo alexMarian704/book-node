@@ -13,7 +13,7 @@ const password = process.env.PASSWORD;
 const app = express();
 const port = 5000;
 
-const link  = `mongodb+srv://qecool:1234alex1234alex@cluster0.nkbze.mongodb.net/first-node?retryWrites=true&w=majority`
+const link  = `mongodb+srv://@cluster0.nkbze.mongodb.net/first-node?retryWrites=true&w=majority`
 mongoose.connect(link , {useNewUrlParser:true , useUnifiedTopology:true})
     .then((result)=> {app.listen(port),console.log("connected")})
     .catch((err) => console.log(err));
